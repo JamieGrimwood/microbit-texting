@@ -6,7 +6,7 @@ function startLoading () {
         # . . . #
         # # # # #
         `)
-    basic.pause(100)
+    basic.pause(50)
     basic.showLeds(`
         . # # # #
         # . . . #
@@ -14,7 +14,7 @@ function startLoading () {
         # . . . #
         # # # # #
         `)
-    basic.pause(100)
+    basic.pause(50)
     basic.showLeds(`
         # # # # #
         . . . . #
@@ -22,7 +22,7 @@ function startLoading () {
         # . . . #
         # # # # #
         `)
-    basic.pause(100)
+    basic.pause(50)
     basic.showLeds(`
         # # # # #
         # . . . #
@@ -30,7 +30,7 @@ function startLoading () {
         # . . . #
         # # # # #
         `)
-    basic.pause(100)
+    basic.pause(50)
     basic.showLeds(`
         # # # # #
         # . . . #
@@ -38,7 +38,7 @@ function startLoading () {
         . . . . #
         # # # # #
         `)
-    basic.pause(100)
+    basic.pause(50)
     basic.showLeds(`
         # # # # #
         # . . . #
@@ -46,7 +46,7 @@ function startLoading () {
         # . . . #
         . # # # #
         `)
-    basic.pause(100)
+    basic.pause(50)
     basic.showLeds(`
         # # # # #
         # . . . #
@@ -54,7 +54,7 @@ function startLoading () {
         # . . . #
         # . # # #
         `)
-    basic.pause(100)
+    basic.pause(50)
     basic.showLeds(`
         # # # # #
         # . . . #
@@ -62,7 +62,7 @@ function startLoading () {
         # . . . #
         # # . # #
         `)
-    basic.pause(100)
+    basic.pause(50)
     basic.showLeds(`
         # # # # #
         # . . . #
@@ -70,7 +70,7 @@ function startLoading () {
         # . . . #
         # # # . #
         `)
-    basic.pause(100)
+    basic.pause(50)
     basic.showLeds(`
         # # # # #
         # . . . #
@@ -78,7 +78,7 @@ function startLoading () {
         # . . . #
         # # # # .
         `)
-    basic.pause(100)
+    basic.pause(50)
     basic.showLeds(`
         # # # # #
         # . . . #
@@ -86,7 +86,7 @@ function startLoading () {
         # . . . .
         # # # # #
         `)
-    basic.pause(100)
+    basic.pause(50)
     basic.showLeds(`
         # # # # #
         # . . . #
@@ -94,7 +94,7 @@ function startLoading () {
         # . . . #
         # # # # #
         `)
-    basic.pause(100)
+    basic.pause(50)
     basic.showLeds(`
         # # # # #
         # . . . .
@@ -102,7 +102,7 @@ function startLoading () {
         # . . . #
         # # # # #
         `)
-    basic.pause(100)
+    basic.pause(50)
     basic.showLeds(`
         # # # # .
         # . . . #
@@ -110,7 +110,7 @@ function startLoading () {
         # . . . #
         # # # # #
         `)
-    basic.pause(100)
+    basic.pause(50)
     basic.showLeds(`
         # # # . #
         # . . . #
@@ -118,7 +118,7 @@ function startLoading () {
         # . . . #
         # # # # #
         `)
-    basic.pause(100)
+    basic.pause(50)
     basic.showLeds(`
         # # . # #
         # . . . #
@@ -126,7 +126,7 @@ function startLoading () {
         # . . . #
         # # # # #
         `)
-    basic.pause(100)
+    basic.pause(50)
 }
 input.onButtonPressed(Button.A, function () {
     if (radioFreq == 0) {
@@ -152,10 +152,12 @@ input.onButtonPressed(Button.B, function () {
         startLoading()
         radioFreq = radioFreqOption
         radio.setGroup(radioFreq)
-        return basic.showString("Set radio freq to: " + radioFreq.toString())
+        return basic.showString("Set freq to: " + radioFreq.toString())
     }
     radio.sendString(letter)
     basic.pause(100)
+    basic.showIcon(IconNames.Yes)
+    basic.pause(500)
     basic.clearScreen()
     letter = ""
 })
