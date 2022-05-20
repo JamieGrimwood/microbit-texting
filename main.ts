@@ -1,5 +1,136 @@
+function startLoading () {
+    basic.showLeds(`
+        # . # # #
+        # . . . #
+        # . . . #
+        # . . . #
+        # # # # #
+        `)
+    basic.pause(100)
+    basic.showLeds(`
+        . # # # #
+        # . . . #
+        # . . . #
+        # . . . #
+        # # # # #
+        `)
+    basic.pause(100)
+    basic.showLeds(`
+        # # # # #
+        . . . . #
+        # . . . #
+        # . . . #
+        # # # # #
+        `)
+    basic.pause(100)
+    basic.showLeds(`
+        # # # # #
+        # . . . #
+        . . . . #
+        # . . . #
+        # # # # #
+        `)
+    basic.pause(100)
+    basic.showLeds(`
+        # # # # #
+        # . . . #
+        # . . . #
+        . . . . #
+        # # # # #
+        `)
+    basic.pause(100)
+    basic.showLeds(`
+        # # # # #
+        # . . . #
+        # . . . #
+        # . . . #
+        . # # # #
+        `)
+    basic.pause(100)
+    basic.showLeds(`
+        # # # # #
+        # . . . #
+        # . . . #
+        # . . . #
+        # . # # #
+        `)
+    basic.pause(100)
+    basic.showLeds(`
+        # # # # #
+        # . . . #
+        # . . . #
+        # . . . #
+        # # . # #
+        `)
+    basic.pause(100)
+    basic.showLeds(`
+        # # # # #
+        # . . . #
+        # . . . #
+        # . . . #
+        # # # . #
+        `)
+    basic.pause(100)
+    basic.showLeds(`
+        # # # # #
+        # . . . #
+        # . . . #
+        # . . . #
+        # # # # .
+        `)
+    basic.pause(100)
+    basic.showLeds(`
+        # # # # #
+        # . . . #
+        # . . . #
+        # . . . .
+        # # # # #
+        `)
+    basic.pause(100)
+    basic.showLeds(`
+        # # # # #
+        # . . . #
+        # . . . .
+        # . . . #
+        # # # # #
+        `)
+    basic.pause(100)
+    basic.showLeds(`
+        # # # # #
+        # . . . .
+        # . . . #
+        # . . . #
+        # # # # #
+        `)
+    basic.pause(100)
+    basic.showLeds(`
+        # # # # .
+        # . . . #
+        # . . . #
+        # . . . #
+        # # # # #
+        `)
+    basic.pause(100)
+    basic.showLeds(`
+        # # # . #
+        # . . . #
+        # . . . #
+        # . . . #
+        # # # # #
+        `)
+    basic.pause(100)
+    basic.showLeds(`
+        # # . # #
+        # . . . #
+        # . . . #
+        # . . . #
+        # # # # #
+        `)
+    basic.pause(100)
+}
 input.onButtonPressed(Button.A, function () {
-    if (radioFreq = 0) { //If the radio frequency has not been set
+    if (radioFreq == 0) {
+        // If the radio frequency has not been set
         radioFreqOption = radioFreqOption + 1
         return basic.showNumber(radioFreqOption)
     }
@@ -16,7 +147,9 @@ radio.onReceivedString(function (receivedString) {
     basic.showString(receivedString)
 })
 input.onButtonPressed(Button.B, function () {
-    if (radioFreq = 0) { //If the radio frequency has not been set
+    if (radioFreq == 0) {
+        // If the radio frequency has not been set
+        startLoading()
         radioFreq = radioFreqOption
         radio.setGroup(radioFreq)
         return basic.showString("Set radio freq to: " + radioFreq.toString())
@@ -29,33 +162,54 @@ input.onButtonPressed(Button.B, function () {
 let number = 0
 let letter = ""
 let alphabet: string[] = []
-alphabet = [
-    "A",
-    "B",
-    "C",
-    "D",
-    "E",
-    "F",
-    "G",
-    "H",
-    "I",
-    "J",
-    "K",
-    "L",
-    "M",
-    "N",
-    "O",
-    "P",
-    "Q",
-    "R",
-    "S",
-    "T",
-    "U",
-    "V",
-    "W",
-    "X",
-    "Y",
-    "Z"
-]
 let radioFreq = 0
 let radioFreqOption = 0
+basic.showLeds(`
+    . . # . .
+    . # . . .
+    # # # # #
+    . # . . .
+    . . # . .
+    `)
+basic.pause(1000)
+basic.showString("Select Freq")
+basic.pause(1000)
+basic.showLeds(`
+    . . # . .
+    . . . # .
+    # # # # #
+    . . . # .
+    . . # . .
+    `)
+basic.pause(1000)
+basic.showString("Enter")
+basic.pause(1000)
+basic.clearScreen()
+alphabet = [
+"A",
+"B",
+"C",
+"D",
+"E",
+"F",
+"G",
+"H",
+"I",
+"J",
+"K",
+"L",
+"M",
+"N",
+"O",
+"P",
+"Q",
+"R",
+"S",
+"T",
+"U",
+"V",
+"W",
+"X",
+"Y",
+"Z"
+]
