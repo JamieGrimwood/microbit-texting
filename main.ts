@@ -146,12 +146,27 @@ input.onButtonPressed(Button.A, function () {
 radio.onReceivedString(function (receivedString) {
     basic.showString(receivedString)
 })
+radio.onReceivedNumber(function (receivedNumber) {
+    if (receivedNumber === 1234) {
+        if (users ^2 || users === 2) {
+            radio.setGroup(0)
+            radioFreq = 0
+            radioFreqOption = 0
+            users = 0
+            return basic.showString("Freq full")
+        } else {
+            users+1
+        }
+    }
+    if (receivedNumber === 123) radio.sendNumber(1234)
+})
 input.onButtonPressed(Button.B, function () {
     if (radioFreq == 0) {
         // If the radio frequency has not been set
         startLoading()
         radioFreq = radioFreqOption
         radio.setGroup(radioFreq)
+        radio.sendNumber(123)
         return basic.showString("Set freq to: " + radioFreq.toString())
     }
     radio.sendString(letter)
@@ -162,6 +177,7 @@ input.onButtonPressed(Button.B, function () {
     letter = ""
 })
 let number = 0
+let users = 0
 let letter = ""
 let alphabet: string[] = []
 let radioFreq = 0
